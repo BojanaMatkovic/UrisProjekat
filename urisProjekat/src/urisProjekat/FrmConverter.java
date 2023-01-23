@@ -23,11 +23,11 @@ import javax.swing.SwingConstants;
 public class FrmConverter extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField_3;
 	private JTextField textFieldInput;
 	private JTextField textBin;
 	private JTextField textDec;
 	private JTextField textHex;
+	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
