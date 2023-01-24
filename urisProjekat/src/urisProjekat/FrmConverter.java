@@ -31,6 +31,10 @@ public class FrmConverter extends JFrame {
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
+	private Decimal decimal;
+	private Binary binary;
+	private Hexadecimal hexadecimal;
+	
 
 	/**
 	 * Launch the application.
@@ -52,14 +56,16 @@ public class FrmConverter extends JFrame {
 	 * Create the frame.
 	 */
 	public FrmConverter() {
+		setBackground(new Color(252, 255, 255));
 		setForeground(new Color(235, 242, 236));
-		setBackground(new Color(199, 215, 227));
 		setFont(new Font("Times New Roman", Font.BOLD, 13));
 		setTitle("Smart Converter");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 496, 265);
 		contentPane = new JPanel();
+		contentPane.setForeground(new Color(0, 0, 0));
+		contentPane.setBackground(new Color(230, 206, 220));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -72,7 +78,7 @@ public class FrmConverter extends JFrame {
 		
 		String[] vrednosti = {"Binary", "Hexadecimal", "Decimal"};
 		JComboBox comboBox = new JComboBox(vrednosti);
-		comboBox.setBackground(new Color(255, 255, 255));
+		comboBox.setBackground(new Color(245, 255, 247));
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
 		gbc_comboBox.insets = new Insets(0, 0, 5, 0);
 		gbc_comboBox.gridwidth = 13;
@@ -205,6 +211,20 @@ public class FrmConverter extends JFrame {
 		gbc_textHex.gridy = 6;
 		contentPane.add(textHex, gbc_textHex);
 		textHex.setColumns(10);
+		
+		binary = new Binary();
+		binary.setBinary(textBin.getText());
+		
+		decimal = new Decimal();
+		decimal.setDecimal(textDec.getText());
+		
+		hexadecimal = new Hexadecimal();
+		hexadecimal.setHexadecimal(textHex.getText());
+		
+		
+		
+		
+		
 	}
 
 }
