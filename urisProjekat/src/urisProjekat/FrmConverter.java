@@ -31,9 +31,7 @@ public class FrmConverter extends JFrame {
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
-	private Decimal decimal;
-	private Binary binary;
-	private Hexadecimal hexadecimal;
+	
 	
 
 	/**
@@ -113,6 +111,7 @@ public class FrmConverter extends JFrame {
 							JOptionPane.showMessageDialog(null, 
 									"Morate uneti decimalni broj", "Los unos", JOptionPane.WARNING_MESSAGE);
 						}
+						
 					}else if(comboBox.getSelectedItem()=="Binary") {
 						try {
 							int decimal = Integer.parseInt(textFieldInput.getText(), 2);
@@ -211,19 +210,6 @@ public class FrmConverter extends JFrame {
 		gbc_textHex.gridy = 6;
 		contentPane.add(textHex, gbc_textHex);
 		textHex.setColumns(10);
-		
-		binary = new Binary();
-		binary.setBinary(textBin.getText());
-		
-		decimal = new Decimal();
-		decimal.setDecimal(textDec.getText());
-		
-		hexadecimal = new Hexadecimal();
-		hexadecimal.setHexadecimal(textHex.getText());
-		
-		
-		
-		
 		
 	}
 
