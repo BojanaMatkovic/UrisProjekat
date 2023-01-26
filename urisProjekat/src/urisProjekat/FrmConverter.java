@@ -101,6 +101,7 @@ public class FrmConverter extends JFrame {
 					if(comboBox.getSelectedItem()=="Decimal") {
 						try {
 							int decimal = Integer.parseInt(textFieldInput.getText());
+							
 							if(decimal<0) {
 							String binary = Integer.toBinaryString(-decimal);
 							String hexadecimal = Integer.toHexString(-decimal);
@@ -124,7 +125,7 @@ public class FrmConverter extends JFrame {
 					}else if(comboBox.getSelectedItem()=="Binary") {
 						try {
 							String binary = textFieldInput.getText();
-							int decimal = Integer.parseInt(textFieldInput.getText(), 2);
+							int decimal = Integer.parseInt(binary, 2);
 							
 							if(decimal<0) {
 								String hexadecimal = Integer.toHexString(-decimal);
@@ -147,7 +148,7 @@ public class FrmConverter extends JFrame {
 					else if(comboBox.getSelectedItem()=="Hexadecimal") {
 						try {
 							String hexadecimal = textFieldInput.getText();
-							int decimal = Integer.parseInt(textFieldInput.getText(), 16);
+							int decimal = Integer.parseInt(hexadecimal, 16);
 							
 							if(decimal<0) {
 								String binary = Integer.toBinaryString(-decimal);
