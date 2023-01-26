@@ -101,11 +101,20 @@ public class FrmConverter extends JFrame {
 					if(comboBox.getSelectedItem()=="Decimal") {
 						try {
 							int decimal = Integer.parseInt(textFieldInput.getText());
+							if(decimal<0) {
+							String binary = Integer.toBinaryString(-decimal);
+							String hexadecimal = Integer.toHexString(-decimal);
+							textBin.setText("-"+binary);
+							textDec.setText(textFieldInput.getText());
+							textHex.setText("-"+hexadecimal);
+							}
+							else {
 							String binary = Integer.toBinaryString(decimal);
 							String hexadecimal = Integer.toHexString(decimal);
 							textBin.setText(binary);
 							textDec.setText(textFieldInput.getText());
 							textHex.setText(hexadecimal);
+							}
 							
 						}catch (NumberFormatException e2) {
 							JOptionPane.showMessageDialog(null, 
@@ -114,13 +123,24 @@ public class FrmConverter extends JFrame {
 						
 					}else if(comboBox.getSelectedItem()=="Binary") {
 						try {
-							int decimal = Integer.parseInt(textFieldInput.getText(), 2);
 							String binary = textFieldInput.getText();
-							String hexadecimal = Integer.toHexString(decimal);
+							int decimal = Integer.parseInt(textFieldInput.getText(), 2);
+							
+							if(decimal<0) {
+							String hexadecimal = Integer.toHexString(-decimal);
 							textBin.setText(binary);
 							textDec.setText("" + decimal);
-							textHex.setText(hexadecimal);
+							textHex.setText("-"+hexadecimal);
 						}
+						
+							else {
+								String hexadecimal = Integer.toHexString(decimal);
+								textBin.setText(binary);
+								textDec.setText("" + decimal);
+								textHex.setText(hexadecimal);
+							}
+							}
+							
 						catch (NumberFormatException e2) {
 							JOptionPane.showMessageDialog(null, 
 									"Morate uneti binarni broj", "Los unos", JOptionPane.WARNING_MESSAGE);
@@ -128,12 +148,20 @@ public class FrmConverter extends JFrame {
 					}
 					else if(comboBox.getSelectedItem()=="Hexadecimal") {
 						try {
-							int decimal = Integer.parseInt(textFieldInput.getText(), 16);
-							String binary = Integer.toBinaryString(decimal);
 							String hexadecimal = textFieldInput.getText();
-							textBin.setText(binary);
+							int decimal = Integer.parseInt(textFieldInput.getText(), 16);
+							if(decimal<0) {
+							String binary = Integer.toBinaryString(-decimal);
+							textBin.setText("-"+binary);
 							textDec.setText("" + decimal);
 							textHex.setText(hexadecimal);
+						} 
+							else {
+								String binary = Integer.toBinaryString(decimal);
+								textBin.setText(binary);
+								textDec.setText("" + decimal);
+								textHex.setText(hexadecimal);
+							}
 						}
 						catch (NumberFormatException e2) {
 							JOptionPane.showMessageDialog(null, 
