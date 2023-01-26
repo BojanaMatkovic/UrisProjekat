@@ -127,20 +127,18 @@ public class FrmConverter extends JFrame {
 							int decimal = Integer.parseInt(textFieldInput.getText(), 2);
 							
 							if(decimal<0) {
-							String hexadecimal = Integer.toHexString(-decimal);
-							textBin.setText(binary);
-							textDec.setText("" + decimal);
-							textHex.setText("-"+hexadecimal);
-						}
-						
+								String hexadecimal = Integer.toHexString(-decimal);
+								textBin.setText(binary);
+								textDec.setText("" + decimal);
+								textHex.setText("-"+hexadecimal);
+							}
 							else {
 								String hexadecimal = Integer.toHexString(decimal);
 								textBin.setText(binary);
 								textDec.setText("" + decimal);
 								textHex.setText(hexadecimal);
 							}
-							}
-							
+						}
 						catch (NumberFormatException e2) {
 							JOptionPane.showMessageDialog(null, 
 									"Morate uneti binarni broj", "Los unos", JOptionPane.WARNING_MESSAGE);
@@ -150,19 +148,20 @@ public class FrmConverter extends JFrame {
 						try {
 							String hexadecimal = textFieldInput.getText();
 							int decimal = Integer.parseInt(textFieldInput.getText(), 16);
+							
 							if(decimal<0) {
-							String binary = Integer.toBinaryString(-decimal);
-							textBin.setText("-"+binary);
-							textDec.setText("" + decimal);
-							textHex.setText(hexadecimal);
-						} 
-							else {
+								String binary = Integer.toBinaryString(-decimal);
+								textBin.setText("-"+binary);
+								textDec.setText("" + decimal);
+								textHex.setText(hexadecimal);
+							}else {
 								String binary = Integer.toBinaryString(decimal);
 								textBin.setText(binary);
 								textDec.setText("" + decimal);
 								textHex.setText(hexadecimal);
 							}
 						}
+						
 						catch (NumberFormatException e2) {
 							JOptionPane.showMessageDialog(null, 
 									"Morate uneti heksadecimalni broj", "Los unos", JOptionPane.WARNING_MESSAGE);
